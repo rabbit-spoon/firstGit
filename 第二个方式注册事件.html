@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="button" value="按钮" id="btn">
+</body>
+<script>
+ /*
+ add - 添加
+ Event - 监听
+ Listener - 监听
+  
+  注册事件也叫监听事件 绑定事件
+  addEventListener 也可以注册事件
+  用法：
+  事件源.addEventListener (‘事件类型’,事件处理程序，flase)
+  flase 可以省略
+
+  优点：可以重复给一个元素注册事件
+ */
+ let btn = document.querySelector('#btn');
+ btn.addEventListener('click',function(){
+   console.log(132);
+ })
+ btn.addEventListener('click',function(){
+   console.log(134);
+ })
+</script>
+</html>

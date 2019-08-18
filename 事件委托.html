@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    li:nth-child(odd){
+      background-color: red;
+    }
+    li:nth-child(even){
+      background-color: green;
+    }
+    span {
+      display: block;
+      width: 300px;
+      height: 40px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><span>我是第1个li</span></li>
+    <li><span>我是第2个li</span></li>
+    <li><span>我是第3个li</span></li>
+    <li><span>我是第4个li</span></li>
+    <li><span>我是第5个li</span></li>
+  </ul>
+</body>
+<script>
+/* 
+  给span注册点击事件
+  给ul注册点击事件
+
+    点击span，因为事件会冒泡
+    也会触发ul的点击事件
+  
+  如果span没有注册事件
+  点击span，ul的事件会不会触发呢？ 会！！！
+
+  我们就不给span注册事件了，给ul注册事件，当span被点击的时候，必然会有事件冒泡到ul身上
+  此时我们在ul的事件处理程序里面
+  判断 被点击的  是否是 span
+  如果是，我们就把li删除
+  如果不是，什么都不做
+  —— 上面的思路，就是事件委托的思路
+*/
+
+let spans = document.querySelectorAll('span');
+let ul = document.querySelector('ul');
+
+// 点击注册事件 
+ul.addEventListener('click',function(event){
+  // 判断点击的是否是span
+  if(event.target.nodeName==='SPAN'){
+    console.log('点击的是span，我们要删除该span的父元素');
+    ul.removeChild(event.target.parentNode);
+  }
+  
+})
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="button" value="按钮" id="btn">
+</body>
+<script>
+/*
+使用开关思想控制点击的行为，可能会修改变量的值
+
+如果把注册的事件去除了 点击就没有反应了
+
+把注册的事件去除就是事件解绑
+
+所谓解绑就是希望事件被触发了之后不会再执行了
+
+注册方式有两种 因此对应解绑的方式也有两种
+
+1.on方式解绑
+
+思路：把储存在on事件类型 属性 里面的函数覆盖掉即可
+
+addEventListener 的方式
+js里面提供了一个对应的API进行事件解绑
+
+事件源.removeEventListener(事件类型，函数名
+)
+
+*/
+// 
+
+// 使用removeEventListener的方式实现
+
+function f1(){
+  console.log(666);
+  btn.removeEventListener('click',f1);
+
+}
+btn.addEventListener('click',f1);
+</script>
+</html>

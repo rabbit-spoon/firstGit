@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>李狗蛋和张翠花，从小就是一起长大的，狗蛋很喜欢翠花，但是翠花确只是把他当好人</div>
+  <div class="info" style="display: none;">
+    想要看更加精彩的内容？请充值
+  </div>
+  <a href="http://www.baidu.com">百度1</a>
+  <a href="javascript:void(0);">百度2</a>
+  <a href="http://www.baidu.com">百度3</a>
+</body>
+<script>
+/*
+事件对象的作用
+什么是事件对象
+把一次交互看成一个事件 ，每个事件都可以看成对象 ——事件对象
+对象
+键值对
+作用：
+获取案件
+获取鼠标位置
+阻止事件冒泡
+得到事件源、事件目标
+阻止用户在浏览器上的一些默认行为
+比如
+Ctrl+C 复制
+右键点击菜单
+
+怎么用：
+1. 获取事件对象
+在事件处理程序的函数里添加一个形参，这个形参会在调用函数的时候得到一个实参，只要触发事件，浏览器就会给我们一个实参
+2.把事件对象当做当初的对象来使用
+对象.属性
+对象.方法();
+
+事件对象还可以阻止浏览器的默认行为
+事件对象.preventDefault();
+
+拿到事件对象之后，对哪个属性，方法感兴趣就把对应的单词复制下来然后查
+
+ctrlkey 判断是否按下 ctrl 按键
+
+*/
+
+// document.onclick = function(e){
+//   console.log(e);
+// }
+
+// 可以用来阻止别人复制
+// 复制有哪些方式：
+// ctrl + C
+// 右键复制
+
+// 阻止Ctrl + C
+document.onkeydown = function(e){
+  // 判断是否同时按下ctrl和C
+  // console.log(e.keyCode);
+  // e.keyCode + e.ctrlKey
+  if(e.ctrlKey&&e.keyCode===67){
+    e.preventDefault();
+  }
+}
+// 阻止右键
+/* 
+  on - 在
+  context - 上下文
+  menu - 菜单
+
+ */
+ document.oncontextmenu = function(e){
+   e.preventDefault();
+  //  document.querySelector('.info').style.display = 'block';
+ }
+
+/* 除了可以阻止别人复制之外，还要讲解一个： 阻止a标签的跳转 
+
+  点击a标签进行跳转，也是一个默认行为
+
+  如果要阻止a标签进行跳转
+    方式1： 把 a标签的 href 属性改成 javascript:void(0);
+    方式2： 给a标签注册事件，在事件里面return false
+              使用了return，return后面的代码就不会会执行了
+
+    方式3：阻止默认行为
+      事件对象.preventDefault();
+      建议如果要阻止默认行为，就把它写在最前面
+*/
+ document.querySelector('a:nth-child(5)').onclick = function(e){
+  e.preventDefault();
+  // console.log(a);
+  // 如果把return写最后，如果前面有某一行报错了，就阻止不了
+  // return false;
+}
+</script>
+</html>

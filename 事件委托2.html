@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    li:nth-child(odd){
+      background-color: red;
+    }
+    li:nth-child(even){
+      background-color: green;
+    }
+    span {
+      display: block;
+      width: 300px;
+      height: 40px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><span>我是第1个li</span></li>
+    <li><span>我是第2个li</span></li>
+    <li><span>我是第3个li</span></li>
+    <li><span>我是第4个li</span></li>
+    <li><span>我是第5个li</span></li>
+  </ul>
+</body>
+<script>
+/*点击span删除li*/
+let ul = document.querySelector('ul');
+let spans = document.querySelectorAll('span');
+// 注册点击事件
+
+  ul.addEventListener('click',function(event){
+    // 判断被点击的是否是span
+    console.log(event.target.nodeName);
+    if(event.target.nodeName==='SPAN'){
+      // 删除li
+      ul.removeChild(event.target.parentNode);
+    }
+  })
+
+</script>
+</html>

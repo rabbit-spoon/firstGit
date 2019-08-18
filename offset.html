@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+      .yeye {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background-color: red;
+    }
+    .baba {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background-color: green;
+    }
+    .erzi {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+      margin-top: 100px;
+      top: 100px;
+      left: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="yeye">
+    <div class="baba">
+      <div class="erzi"></div>
+    </div>
+  </div>
+</body>
+<script>
+/*
+得到三个元素，输出他们的offsetParent 属性
+
+1.如果前代元素没有任何定位，返回值为body或html
+2.如果前代有定位，返回一个离我最近的定位的前代元素
+*/
+ 
+ let yeye = document.querySelector('.yeye');
+ let baba = document.querySelector('.baba');
+ let erzi = document.querySelector('.erzi');
+// console.log(yeye.offsetParent);
+// console.log(baba.offsetParent);
+// console.log(erzi.offsetParent);
+// 输出 offsTop
+console.log(yeye.offsetTop);
+console.log(baba.offsetTop);
+console.log(erzi.offsetTop);
+</script>
+</html>

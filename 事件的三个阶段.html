@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div div{
+      margin-left: auto;
+    }
+    .yeye {
+      width: 400px;
+      height: 400px;
+      background-color: red;
+    }
+    .baba {
+      width: 300px;
+      height: 300px;
+      background-color: green;
+    }
+    .erzi {
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="yeye">
+    <div class="baba">
+        <div class="erzi"></div>
+    </div>
+  </div>
+</body>
+<script>
+let yeye = document.querySelector('.yeye');
+let baba = document.querySelector('.baba');
+let erzi = document.querySelector('.erzi');
+
+// erzi.addEventListener('click',function(){
+//   console.log('我是你儿子');
+// },true);
+// baba.addEventListener('click',function(){
+//   console.log('我是你爸爸');
+// },true);
+// yeye.addEventListener('click',function(){
+//   console.log('我是你爷爷');
+// },true);
+
+erzi.addEventListener('click',function(){
+  console.log('我是你儿子');
+},false);
+baba.addEventListener('click',function(){
+  console.log('我是你爸爸');
+},false);
+yeye.addEventListener('click',function(){
+  console.log('我是你爷爷');
+},false);
+
+/*
+addEventListener 的三个参数的研究 
+文档告诉我们 是布尔类型
+事件传播是浏览器的一个默认的行为 通过事件传播知道了是谁触发了事件
+
+事件捕获 
+指的是从根元素传播到事件源的过程
+
+事件冒泡指的是从事件源传播到根元素的过程
+
+事件目标
+事件传播到了事件源身上
+
+如果第三个参数是true 会在捕获阶段执行处理程序
+
+false 会在事件冒泡阶段执行处理程序
+
+*/
+</script>
+</html>
