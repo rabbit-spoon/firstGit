@@ -117,7 +117,7 @@ kits.deleteLocalDataById = function (key, id) {
 * 根据id修改localStorage里面的指定键(key)的数组数据参数
 */
 kits.modifyLocalDataById = function (key, id,data) {
-  // let oldArr = tool.getLocalDataArray(key);
+  // let oldArr = kits.getLocalDataArray(key);
   let oldArr = this.getLocalDataArray(key);
   let flag = false;
   oldArr.forEach((e, i) => {
