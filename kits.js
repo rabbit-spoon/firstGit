@@ -109,7 +109,7 @@ kits.deleteLocalDataById = function (key, id) {
           return;
       }
   })
-  // tool.saveLocalDataArray(key, oldArr);
+  // kits.saveLocalDataArray(key, oldArr);
   this.saveLocalDataArray(key, oldArr);
 }
 
